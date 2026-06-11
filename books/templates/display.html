@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<table>
+
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for i in data %}
+
+    <tr>
+        <td>{{ i.title }}</td>
+        <td>{{ i.author }}</td>
+        <td>{{ i.language }}</td>
+        <td>{{ i.price }}</td>
+        <td>{{ i.quantity }}</td>
+
+        <td>
+            <a href="{% url 'update' i.id %}">
+                <button>Edit</button>
+            </a>
+
+            <a href="{% url 'delete' i.id %}">
+                <button>Delete</button>
+            </a>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

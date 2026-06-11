@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    <input type="text" name="title" placeholder="Enter Title" value="{{ book.title }}">
+
+    <input type="text" name="author" placeholder="Enter Author" value="{{ book.author }}">
+
+    <input type="text" name="language" placeholder="Enter Language" value="{{ book.language }}">
+
+    <input type="number" name="price" placeholder="Enter Price" value="{{ book.price }}">
+
+    <input type="number" name="quantity" placeholder="Enter Quantity" value="{{ book.quantity }}">
+
+    <button type="submit">Add Book</button>
+
+</form>
+
+{% endblock %}
